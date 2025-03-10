@@ -1,103 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-scroll';
-import './Navbar.module.css';
+import React from 'react';
+import styles from './Navbar.module.css';
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const handleScrollTo = (id) => {
+    document.getElementById(id).scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'start'
+    });
   };
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="navbar-container">
-        <div className="navbar-logo">
-          <Link to="home" smooth={true} duration={500}>Anna</Link>
-        </div>
-
-        <div className={`navbar-menu ${menuOpen ? 'active' : ''}`}>
-          <ul>
-            <li>
-              <Link 
-                to="home" 
-                spy={true} 
-                smooth={true} 
-                offset={-70} 
-                duration={500}
-                activeClass="active"
-                onClick={() => setMenuOpen(false)}
-              >
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="about" 
-                spy={true} 
-                smooth={true} 
-                offset={-70} 
-                duration={500}
-                activeClass="active"
-                onClick={() => setMenuOpen(false)}
-              >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="projects" 
-                spy={true} 
-                smooth={true} 
-                offset={-70} 
-                duration={500}
-                activeClass="active"
-                onClick={() => setMenuOpen(false)}
-              >
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link 
-                to="contact" 
-                spy={true} 
-                smooth={true} 
-                offset={-70} 
-                duration={500}
-                activeClass="active"
-                onClick={() => setMenuOpen(false)}
-              >
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-
-        <div className="menu-toggle" onClick={toggleMenu}>
-          <div className={`hamburger ${menuOpen ? 'active' : ''}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <div className={styles.navbarVertical}>
+      <ul>
+        <li>
+          <a 
+            onClick={() => handleScrollTo('home')}
+            className={styles.navLink}
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a 
+            onClick={() => handleScrollTo('about')}
+            className={styles.navLink}
+          >
+            About
+          </a>
+        </li>
+        <li>
+          <a 
+            onClick={() => handleScrollTo('projects')}
+            className={styles.navLink}
+          >
+            Projects
+          </a>
+        </li>
+        <li>
+          <a 
+            onClick={() => handleScrollTo('contact')}
+            className={styles.navLink}
+          >
+            Contact
+          </a>
+        </li>
+      </ul>
+    </div>
   );
 };
 
