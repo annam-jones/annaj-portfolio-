@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.projectsSection {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Project content styling - on the left */
+.projectContent {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+/* Pixel font title styling */
+.pixelTitle {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #333;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projectContent p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.projectDetails {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.techStack, .features {
+  flex: 1;
+}
+
+.techStack h3, .features h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.techStack ul, .features ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.techStack li, .features li {
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.links {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* Image gallery styling - on the right */
+.imageGallery {
+  flex: 1;
+  position: relative;
+  min-height: 650px;
+  width: 100%;
+}
+
+.galleryImage {
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.galleryImage:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+}
+
+/* Positioning to match the reference image */
+.image1 {
+  top: 0;
+  right: 5%;
+  z-index: 4;
+  width: 90%;
+}
+
+.image2 {
+  top: 150px;
+  right: 10%;
+  z-index: 3;
+  width: 85%;
+  transform: rotate(2deg);
+}
+
+.image3 {
+  top: 300px;
+  right: 0;
+  z-index: 2;
+  width: 80%;
+  transform: rotate(-1deg);
+}
+
+.image4 {
+  top: 450px;
+  right: 15%;
+  z-index: 1;
+  width: 75%;
+  transform: rotate(1deg);
+}
+
+/* Responsive styling */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column-reverse; /* Changed to keep images on top when stacked */
+  }
+  
+  .imageGallery {
+    margin-bottom: 3rem;
+    min-height: 500px;
+  }
+  
+  .projectContent {
+    padding-right: 0;
+  }
+  
+  .pixelTitle {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .imageGallery {
+    min-height: 400px;
+  }
+  
+  .galleryImage {
+    max-width: 95%;
+  }
+  
+  .image1 {
+    width: 90%;
+    right: 5%;
+  }
+  
+  .image2 {
+    top: 100px;
+    right: 10%;
+    width: 85%;
+  }
+  
+  .image3 {
+    top: 200px;
+    right: 5%;
+    width: 80%;
+  }
+  
+  .image4 {
+    top: 300px;
+    right: 15%;
+    width: 75%;
+  }
+  
+  .projectDetails {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .pixelTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .projectsSection {
+    padding: 3rem 1rem;
+  }
+  
+  .imageGallery {
+    min-height: 300px;
+  }
+  
+  .pixelTitle {
+    font-size: 1.1rem;
+  }
+}

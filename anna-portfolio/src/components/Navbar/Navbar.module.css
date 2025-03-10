@@ -1,55 +1,58 @@
 .navbarVertical {
-  position: fixed;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1000;
-  background-color: rgba(20, 20, 20, 0.8);
-  border-radius: 30px;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.navbarVertical ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.navbarVertical li {
-  margin: 15px 0;
-  text-align: center;
-}
-
-.navbarVertical a {
-  display: block;
-  padding: 10px 20px;
-  color: white;
-  text-decoration: none;
-  border-radius: 20px;
-  transition: background-color 0.3s;
-  font-size: 16px;
-}
-
-.navbarVertical a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.activeLink {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.navLink {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    background-color: rgba(20, 20, 20, 0.8);
+    border-radius: 30px;
+    padding: 15px 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 75px; 
+  }
+  
+  .navbarVertical ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbarVertical li {
+    margin: 12px 0;
+    text-align: center;
+  }
+  
+  .navLink {
     display: block;
-    padding: 10px 20px;
+    padding: 8px 0;
     color: white;
     text-decoration: none;
-    border-radius: 20px;
+    border-radius: 16px;
     transition: background-color 0.3s;
-    font-size: 16px;
+    font-size: 11px;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 500;
   }
   
   .navLink:hover {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .activeLink {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .navbarVertical {
+      width: 90px;
+      padding: 12px 6px;
+    }
+    
+    .navLink {
+      font-size: 10px;
+      padding: 7px 0;
+    }
   }
