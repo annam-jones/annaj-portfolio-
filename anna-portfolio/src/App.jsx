@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 import "./App.css";
 
 function App() {
@@ -24,8 +25,7 @@ function App() {
         </section>
         
         <section id="contact" className="section">
-          <h1>Contact Section</h1>
-          <p>Content coming soon...</p>
+         <Contact />
         </section>
       </div>
     </div>
